@@ -1,20 +1,32 @@
-let todos = ['Make some code', 'Eat lunch', 'Go out with a dog'];
+const todos = [{
+    title: 'Make some code',
+    dueDate: '2022-12-01'},{
+    title: 'Go out with dog',
+    dueDate: '2021-03-02'},{
+    title: 'Eat some meat',
+    dueDate: '2022-05-25'},];
 
-render()
+render();
 
 function addToDo(){
-    let textbox = document.getElementById('todo-title');
-    let title = textbox.value;
-    todos.push(title);
+    const textbox = document.getElementById('todo-title');
+    const title = textbox.value;
+
+    const datePicker = document.getElementById('date-picker');
+    const dueDate = datePicker.value;
+    todos.push({
+        title: title,
+        dueDate:dueDate
+    });
     render();
 }
 
 function render(){
     document.getElementById('todo-list').innerHTML = '';
-    todos.forEach(function writeDoTo(todo){
+    todos.forEach(function (todo){
         let element = document.createElement('div');
-        element.innerText=todo;
-        let todoList = document.getElementById('todo-list');
+        element.innerText=todo.title+' '+todo.dueDate;
+        const todoList = document.getElementById('todo-list');
         todoList.appendChild(element);
         }
     )
