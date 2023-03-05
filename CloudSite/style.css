@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("img/back.png");
+    background-size: cover;
+}
+
+section{
+    position: relative;
+    padding: 75px 100px;
+}
+
+section h2{
+    font-size: 2.5em;
+}
