@@ -21,11 +21,21 @@ function addToDo(){
     render();
 }
 
+function deleteToDo(){
+    
+}
+
 function render(){
     document.getElementById('todo-list').innerHTML = '';
     todos.forEach(function (todo){
         let element = document.createElement('div');
         element.innerText=todo.title+' '+todo.dueDate;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.innerText = 'Delete';
+        deleteButton.onclick = deleteToDo;
+        element.appendChild(deleteButton);
+
         const todoList = document.getElementById('todo-list');
         todoList.appendChild(element);
         }
