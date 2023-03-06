@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+
+*{
+    font-family: 'Golos Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #111;
+    color: #fff;
+}
+
+div{
+    text-align: center;
+}
+
+.input > input{
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+.input > button{
+    font-size: 1em;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+h2{
+    font-size: 5em;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#todo-list > div{
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#todo-list > div > button{
+    font-size: 1em;
+    margin-left: 20px;
+}

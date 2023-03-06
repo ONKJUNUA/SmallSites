@@ -5,17 +5,9 @@ if (Array.isArray(savedTodos)) {
   todos = savedTodos;
 } else {
   todos = [{
-    title: 'Get groceries',
-    dueDate: '2021-10-04',
-    id: 'id1'
-  }, {
-    title: 'Wash car',
-    dueDate: '2021-02-03',
-    id: 'id2'
-  }, {
-    title: 'Make dinner',
-    dueDate: '2021-03-04',
-    id: 'id3'
+    title: 'Create first ToDo',
+    dueDate: '2023-01-01',
+    id: 'id0'
   }];
 }
 
@@ -103,7 +95,7 @@ function onUpdate(event) {
 function render() {
   document.getElementById('todo-list').innerHTML = '';
   todos.forEach(function (todo) {
-    const element = document.createElement('div');
+    let element = document.createElement('div');
     if (todo.isEditing === true) {
       const textbox = document.createElement('input');
       textbox.type = 'text';
