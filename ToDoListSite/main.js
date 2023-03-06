@@ -9,6 +9,25 @@ let todos = [{
     dueDate: '2022-05-25',
     id: 'id3'}];
 
+function createToDo(title, dueDate){
+    const id = '' + new Date().getTime();
+    todos.push({
+        title: title,
+        dueDate:dueDate,
+        id: id
+    });
+}
+
+function removeToDo(idToDelete){
+    todos = todos.filter(function (todo) {
+        if(todo.id===idToDelete){
+            return false;
+        } else {
+            return true;
+        }
+    });
+}
+
 render();
 
 function addToDo(){
@@ -18,27 +37,17 @@ function addToDo(){
     const datePicker = document.getElementById('date-picker');
     const dueDate = datePicker.value;
 
-    const id = '' + new Date().getTime();
-
-
-    todos.push({
-        title: title,
-        dueDate:dueDate,
-        id: id
-    });
+    createToDo(title, dueDate);
+    
     render();
 }
 
 function deleteToDo(event){
     const deleteButton = event.target;
     const idToDelete = deleteButton.id;
-    todos = todos.filter(function (todo) {
-        if(todo.id===idToDelete){
-            return false;
-        } else {
-            return true;
-        }
-    });
+
+    removeToDo(idToDelete);
+
     render();
 }
 
