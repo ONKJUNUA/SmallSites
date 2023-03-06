@@ -5,8 +5,8 @@ if (Array.isArray(savedTodos)) {
   todos = savedTodos;
 } else {
   todos = [{
-    title: 'Create first ToDo',
     dueDate: '2023-01-01',
+    title: 'Create first ToDo',
     id: 'id0'
   }];
 }
@@ -14,8 +14,8 @@ if (Array.isArray(savedTodos)) {
 function createTodo(title, dueDate) {
   const id = '' + new Date().getTime();
   todos.push({
-    title: title,
     dueDate: dueDate,
+    title: title,
     id: id
   });
   saveTodos();
@@ -44,8 +44,8 @@ function setEditing(todoId) {
 function updateTodo(todoId, newTitle, newDate) {
   todos.forEach(function (todo) {
     if (todo.id === todoId) {
-      todo.title = newTitle;
       todo.dueDate = newDate;
+      todo.title = newTitle;
       todo.isEditing = false;
     }
   });
@@ -111,8 +111,8 @@ function render() {
       updateButton.onclick = onUpdate;
       element.appendChild(updateButton);
     } else {
-      element.innerText = todo.title + ' ' + todo.dueDate;
-      const editButton = document.createElement('button');
+        const editButton = document.createElement('button');
+        element.innerText = todo.dueDate + '   ' + todo.title;
       editButton.innerText = 'Edit';
       editButton.onclick = onEdit;
       editButton.dataset.todoId = todo.id;
