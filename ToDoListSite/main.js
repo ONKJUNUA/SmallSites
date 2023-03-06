@@ -1,13 +1,15 @@
-let todos = [{
-    title: 'Make some code',
-    dueDate: '2022-12-01',
-    id: 'id1'},{
-    title: 'Go out with dog',
-    dueDate: '2021-03-02',
-    id: 'id2'},{
-    title: 'Eat some meat',
-    dueDate: '2022-05-25',
-    id: 'id3'}];
+let todos;
+
+const savedToDo = JSON.parse(localStorage.getItem('todos'));
+
+if (Array.isArray(savedToDo)) {
+    todos=savedToDo;
+} else {
+    todos = [{
+        title: 'Make your first ToDo',
+        dueDate: '2023-01-01',
+        id: 'id0'}];
+}
 
 function createToDo(title, dueDate){
     const id = '' + new Date().getTime();
@@ -16,6 +18,8 @@ function createToDo(title, dueDate){
         dueDate:dueDate,
         id: id
     });
+
+    saveToDo();
 }
 
 function removeToDo(idToDelete){
@@ -26,6 +30,12 @@ function removeToDo(idToDelete){
             return true;
         }
     });
+
+    saveToDo();
+}
+
+function saveToDo(){
+    localStorage.setItem('todos', JSON.stringify(todos))
 }
 
 render();
