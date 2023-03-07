@@ -7,6 +7,7 @@
     box-sizing: border-box;
     background: #111;
     color: #fff;
+    transition: .2s;
 }
 
 body{
@@ -35,7 +36,6 @@ body{
     outline: none;
     border-radius: 10px;
     background: #222;
-    transition: .2s;
 }
 
 #date-picker{
@@ -56,7 +56,6 @@ h2{
     padding-top: 10px;
     margin-bottom: 30px;
     font-size: 2em;
-    transition: .2s;
 }
 
 #todo-list > div > input{
@@ -80,7 +79,7 @@ h2{
     outline: none;
     border-radius: 10px;
     background: #222;
-    transition: .2s;
+    
 }
 
 .input > button:hover{
@@ -99,6 +98,22 @@ h2{
 
 .edit{
     left: 650px;
+}
+
+.foot{
+    height: 50px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #fff; 
 }
 
 @media (max-width: 950px) {
@@ -122,5 +137,27 @@ h2{
     }
     .edit{
         left: 390px;
+    }
+}
+
+@media (max-width: 620px) {
+
+    #todo-list > div{
+        font-size: 0.9em;
+    }
+    .delete{
+        left: 360px;
+    }
+    .edit{
+        left: 300px;
+    }
+    .input > button{
+        font-size: 0.7em;
+    }
+    .input > input{
+        font-size: 0.7em;
+    }
+    h2{
+        font-size: 4em;
     }
 }
