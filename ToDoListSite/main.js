@@ -98,6 +98,7 @@ function render() {
     let element = document.createElement('div');
     if (todo.isEditing === true) {
       const textbox = document.createElement('input');
+      textbox.maxLength = "20";
       textbox.type = 'text';
       textbox.id = 'edit-title-' + todo.id;
       element.appendChild(textbox);
@@ -111,13 +112,15 @@ function render() {
       updateButton.onclick = onUpdate;
       element.appendChild(updateButton);
     } else {
-        const editButton = document.createElement('button');
-        element.innerText = todo.dueDate + '   ' + todo.title;
+      const editButton = document.createElement('button');
+      editButton.classList.add("edit");
+      element.innerText = todo.dueDate + '   ' + todo.title;
       editButton.innerText = 'Edit';
       editButton.onclick = onEdit;
       editButton.dataset.todoId = todo.id;
       element.appendChild(editButton);
       const deleteButton = document.createElement('button');
+      deleteButton.classList.add("delete");
       deleteButton.innerText = 'Delete';
       deleteButton.onclick = deleteTodo;
       deleteButton.id = todo.id;
