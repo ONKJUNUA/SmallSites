@@ -42,6 +42,10 @@ body{
     margin-left: 20px;
 }
 
+::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}
+
 h2{
     font-size: 5em;
     margin-bottom: 50px;
@@ -52,7 +56,7 @@ h2{
     padding-top: 10px;
     margin-bottom: 30px;
     font-size: 2em;
-    width: 95vw;
+    transition: .2s;
 }
 
 #todo-list > div > input{
@@ -95,4 +99,28 @@ h2{
 
 .edit{
     left: 650px;
+}
+
+@media (max-width: 950px) {
+    #todo-list > div{
+        font-size: 1.5em;
+    }
+    .delete{
+        left: 580px;
+    }
+    .edit{
+        left: 500px;
+    }
+}
+
+@media (max-width: 800px) {
+    #todo-list > div{
+        font-size: 1.1em;
+    }
+    .delete{
+        left: 460px;
+    }
+    .edit{
+        left: 390px;
+    }
 }

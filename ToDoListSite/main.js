@@ -98,7 +98,7 @@ function render() {
     let element = document.createElement('div');
     if (todo.isEditing === true) {
       const textbox = document.createElement('input');
-      textbox.maxLength = "20";
+      textbox.maxLength = "18";
       textbox.type = 'text';
       textbox.id = 'edit-title-' + todo.id;
       element.appendChild(textbox);
